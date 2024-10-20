@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Sistema Circulatório</title>
+    <title>Quiz - Sistema Circulatório</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #f4f4f9;
+            padding: 20px;
         }
         h1 {
-            color: #4CAF50;
             text-align: center;
+            color: #333;
         }
         .question {
             margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
         }
-        .result {
-            font-weight: bold;
+        .question h2 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 8px;
+            cursor: pointer;
         }
         .correct {
             color: green;
@@ -26,206 +40,222 @@
         .incorrect {
             color: red;
         }
-        .answer {
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
+    <h1>Quiz: Sistema Circulatório</h1>
 
-<h1>Teste: Sistema Circulatório</h1>
-
-<form id="quizForm">
     <div class="question">
-        <p>1. Qual é a camada mais interna dos vasos sanguíneos?</p>
-        <input type="radio" name="q1" value="1"> Túnica média<br>
-        <input type="radio" name="q1" value="2"> Túnica adventícia<br>
-        <input type="radio" name="q1" value="3"> <span class="answer">Túnica íntima</span><br>
-        <input type="radio" name="q1" value="4"> Túnica externa<br>
+        <h2>1. Qual é a principal função das células endoteliais nos vasos sanguíneos?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Efetuar trocas bidirecionais entre o sangue e o tecido circundante.</li>
+            <li onclick="checkAnswer(this, false)">Promover a coagulação sanguínea imediatamente após a passagem do sangue.</li>
+            <li onclick="checkAnswer(this, false)">Transportar oxigênio diretamente aos tecidos.</li>
+            <li onclick="checkAnswer(this, false)">Regular a temperatura corporal.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>2. Qual função é associada ao endotélio da túnica íntima?</p>
-        <input type="radio" name="q2" value="1"> Impedir a coagulação sanguínea<br>
-        <input type="radio" name="q2" value="2"> Efetuar trocas bidirecionais entre sangue e tecido<br>
-        <input type="radio" name="q2" value="3"> Produzir substâncias que influenciam o tônus muscular<br>
-        <input type="radio" name="q2" value="4"> <span class="answer">Todas as alternativas acima</span><br>
+        <h2>2. Qual camada dos vasos sanguíneos é responsável por separar a túnica íntima da túnica média?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Túnica adventícia</li>
+            <li onclick="checkAnswer(this, true)">Lâmina elástica interna</li>
+            <li onclick="checkAnswer(this, false)">Camada subendotelial</li>
+            <li onclick="checkAnswer(this, false)">Túnica muscular</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>3. Em qual camada encontramos fibras musculares lisas organizadas em forma helicoidal?</p>
-        <input type="radio" name="q3" value="1"> Túnica adventícia<br>
-        <input type="radio" name="q3" value="2"> <span class="answer">Túnica média</span><br>
-        <input type="radio" name="q3" value="3"> Túnica íntima<br>
-        <input type="radio" name="q3" value="4"> Túnica subendotelial<br>
+        <h2>3. Onde estão localizados os corpos carotídeos e aórticos e qual sua função principal?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Na camada subendotelial, responsáveis por controlar a coagulação.</li>
+            <li onclick="checkAnswer(this, false)">No endocárdio, controlando os batimentos cardíacos.</li>
+            <li onclick="checkAnswer(this, true)">Nas artérias, contendo quimiorreceptores sensíveis ao oxigênio e dióxido de carbono.</li>
+            <li onclick="checkAnswer(this, false)">Nas veias, ajustando a pressão arterial diretamente.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>4. Quais células são encontradas nos corpos carotídeos e aórticos e são sensíveis à baixa tensão de oxigênio?</p>
-        <input type="radio" name="q4" value="1"> Células musculares<br>
-        <input type="radio" name="q4" value="2"> Células de Purkinje<br>
-        <input type="radio" name="q4" value="3"> <span class="answer">Células I e II</span><br>
-        <input type="radio" name="q4" value="4"> Células endoteliais<br>
+        <h2>4. Qual é a característica principal dos capilares contínuos?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Possuem fenestras amplas para permitir a passagem de grandes moléculas.</li>
+            <li onclick="checkAnswer(this, true)">As células endoteliais possuem vesículas de pinocitose para transporte de substâncias.</li>
+            <li onclick="checkAnswer(this, false)">Não possuem lâmina basal.</li>
+            <li onclick="checkAnswer(this, false)">Estão presentes apenas no sistema nervoso.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>5. Qual é o nome da artéria que transporta sangue rico em oxigênio para o corpo?</p>
-        <input type="radio" name="q5" value="1"> Artéria pulmonar<br>
-        <input type="radio" name="q5" value="2"> <span class="answer">Aorta</span><br>
-        <input type="radio" name="q5" value="3"> Veia cava<br>
-        <input type="radio" name="q5" value="4"> Artéria coronária<br>
+        <h2>5. Qual o tipo de artéria responsável pela distribuição de sangue para os órgãos?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Artérias elásticas</li>
+            <li onclick="checkAnswer(this, true)">Artérias musculares</li>
+            <li onclick="checkAnswer(this, false)">Arteríolas</li>
+            <li onclick="checkAnswer(this, false)">Capilares</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>6. Qual é a função principal das artérias elásticas?</p>
-        <input type="radio" name="q6" value="1"> Fornecer sangue aos músculos<br>
-        <input type="radio" name="q6" value="2"> Dilatar-se na sístole e contrair-se na diástole<br>
-        <input type="radio" name="q6" value="3"> Controlar o fluxo sanguíneo através de esfíncteres<br>
-        <input type="radio" name="q6" value="4"> <span class="answer">Garantir a resistência e elasticidade dos vasos</span><br>
+        <h2>6. Qual a função dos vasa vasorum?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Regular a pressão arterial nos capilares.</li>
+            <li onclick="checkAnswer(this, true)">Fornecer nutrientes às células das túnicas adventícia e média em vasos calibrosos.</li>
+            <li onclick="checkAnswer(this, false)">Transportar oxigênio diretamente para o coração.</li>
+            <li onclick="checkAnswer(this, false)">Permitir a passagem de plaquetas para o sangue.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>7. Qual é a camada mais espessa nas veias?</p>
-        <input type="radio" name="q7" value="1"> Túnica íntima<br>
-        <input type="radio" name="q7" value="2"> <span class="answer">Túnica adventícia</span><br>
-        <input type="radio" name="q7" value="3"> Túnica média<br>
-        <input type="radio" name="q7" value="4"> Túnica subendotelial<br>
+        <h2>7. Qual estrutura controla o fluxo sanguíneo nas arteríolas?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Esfíncteres das metarteríolas</li>
+            <li onclick="checkAnswer(this, false)">Lâmina elástica interna</li>
+            <li onclick="checkAnswer(this, false)">Lâminas de elastina</li>
+            <li onclick="checkAnswer(this, false)">Nó sinoatrial</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>8. Onde estão localizados os capilares do tipo sinusoide?</p>
-        <input type="radio" name="q8" value="1"> Rins e intestinos<br>
-        <input type="radio" name="q8" value="2"> <span class="answer">Fígado e medula óssea</span><br>
-        <input type="radio" name="q8" value="3"> Músculos e tecido conjuntivo<br>
-        <input type="radio" name="q8" value="4"> Glândulas endócrinas<br>
+        <h2>8. Onde encontramos os capilares sinusoides?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Nos músculos esqueléticos</li>
+            <li onclick="checkAnswer(this, false)">No sistema nervoso</li>
+            <li onclick="checkAnswer(this, true)">No fígado, medula óssea e baço</li>
+            <li onclick="checkAnswer(this, false)">Nas artérias coronárias</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>9. Qual é a principal função dos capilares fenestrados?</p>
-        <input type="radio" name="q9" value="1"> Permitir a troca de grandes moléculas<br>
-        <input type="radio" name="q9" value="2"> Permitir a passagem de células sanguíneas<br>
-        <input type="radio" name="q9" value="3"> <span class="answer">Facilitar o intercâmbio de substâncias entre o sangue e os tecidos</span><br>
-        <input type="radio" name="q9" value="4"> Impedir a passagem de substâncias<br>
+        <h2>9. Qual túnica é mais espessa nas veias?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Túnica íntima</li>
+            <li onclick="checkAnswer(this, false)">Túnica média</li>
+            <li onclick="checkAnswer(this, true)">Túnica adventícia</li>
+            <li onclick="checkAnswer(this, false)">Lâmina elástica externa</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>10. Quais vasos são responsáveis pela recolha final do sangue nos tecidos?</p>
-        <input type="radio" name="q10" value="1"> Artérias elásticas<br>
-        <input type="radio" name="q10" value="2"> <span class="answer">Capilares e vênulas pós-capilares</span><br>
-        <input type="radio" name="q10" value="3"> Veias coronárias<br>
-        <input type="radio" name="q10" value="4"> Arteríolas<br>
+        <h2>10. Qual é o componente mais espesso do miocárdio?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Endotélio</li>
+            <li onclick="checkAnswer(this, false)">Fibras de Purkinje</li>
+            <li onclick="checkAnswer(this, true)">Células musculares estriadas cardíacas</li>
+            <li onclick="checkAnswer(this, false)">Túnica adventícia</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>11. Qual é a função das válvulas nas veias?</p>
-        <input type="radio" name="q11" value="1"> Ajudar a bombear o sangue<br>
-        <input type="radio" name="q11" value="2"> Regular a pressão sanguínea<br>
-        <input type="radio" name="q11" value="3"> Impedir o fluxo sanguíneo para trás<br>
-        <input type="radio" name="q11" value="4"> <span class="answer">Evitar o refluxo do sangue</span><br>
+        <h2>11. O que diferencia as artérias elásticas das artérias musculares?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">As artérias elásticas têm um calibre menor.</li>
+            <li onclick="checkAnswer(this, true)">As artérias elásticas possuem lâminas de elastina na túnica média.</li>
+            <li onclick="checkAnswer(this, false)">As artérias musculares possuem mais vasa vasorum.</li>
+            <li onclick="checkAnswer(this, false)">As artérias elásticas têm túnica adventícia mais espessa.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>12. Qual parte do coração é responsável por bombear o sangue?</p>
-        <input type="radio" name="q12" value="1"> Pericárdio<br>
-        <input type="radio" name="q12" value="2"> <span class="answer">Miocárdio</span><br>
-        <input type="radio" name="q12" value="3"> Endocárdio<br>
-        <input type="radio" name="q12" value="4"> Epicárdio<br>
+        <h2>12. Qual célula do sistema de condução cardíaca é encontrada no nó sinoatrial?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">Células musculares estriadas cardíacas</li>
+            <li onclick="checkAnswer(this, false)">Células de Purkinje</li>
+            <li onclick="checkAnswer(this, true)">Células cardíacas especializadas fusiformes</li>
+            <li onclick="checkAnswer(this, false)">Células do miocárdio</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>13. Qual é a principal função das células de Purkinje?</p>
-        <input type="radio" name="q13" value="1"> Controlar a contração atrial<br>
-        <input type="radio" name="q13" value="2"> Regular a pressão arterial<br>
-        <input type="radio" name="q13" value="3"> <span class="answer">Transmitir o impulso elétrico para a contração ventricular</span><br>
-        <input type="radio" name="q13" value="4"> Produzir fatores anticoagulantes<br>
+        <h2>13. Qual das características a seguir é encontrada nas vênulas pós-capilares?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Junções frouxas que permitem a entrada de fluido tissular.</li>
+            <li onclick="checkAnswer(this, false)">Túnica adventícia espessa.</li>
+            <li onclick="checkAnswer(this, false)">Presença de lâmina elástica interna.</li>
+            <li onclick="checkAnswer(this, false)">Válvulas presentes na túnica íntima.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>14. Qual é a camada do coração homóloga à túnica íntima dos vasos sanguíneos?</p>
-        <input type="radio" name="q14" value="1"> Miocárdio<br>
-        <input type="radio" name="q14" value="2"> <span class="answer">Endocárdio</span><br>
-        <input type="radio" name="q14" value="3"> Pericárdio<br>
-        <input type="radio" name="q14" value="4"> Epicárdio<br>
+        <h2>14. Onde é encontrado o sistema porta, que permite que o sangue passe por duas redes capilares?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">No miocárdio</li>
+            <li onclick="checkAnswer(this, true)">Em algumas veias específicas, como as hepáticas</li>
+            <li onclick="checkAnswer(this, false)">Nas arteríolas do sistema coronário</li>
+            <li onclick="checkAnswer(this, false)">Nos capilares contínuos</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>15. O que ocorre nas metarteríolas?</p>
-        <input type="radio" name="q15" value="1"> Conduzem o sangue diretamente aos músculos<br>
-        <input type="radio" name="q15" value="2"> Regularizam o fluxo sanguíneo através de esfíncteres<br>
-        <input type="radio" name="q15" value="3"> <span class="answer">Controlam o fluxo sanguíneo nos capilares</span><br>
-        <input type="radio" name="q15" value="4"> Produzem angiotensina II<br>
+        <h2>15. Qual é a função do fator natriurético atrial produzido pelo coração?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Regula a pressão arterial e o equilíbrio de fluidos.</li>
+            <li onclick="checkAnswer(this, false)">Promove a coagulação sanguínea.</li>
+            <li onclick="checkAnswer(this, false)">Controla a contração dos músculos esqueléticos.</li>
+            <li onclick="checkAnswer(this, false)">Ativa o sistema de condução cardíaca.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>16. O que caracteriza os seios carotídeos?</p>
-        <input type="radio" name="q16" value="1"> São sensíveis a variações de CO2<br>
-        <input type="radio" name="q16" value="2"> São encontrados em artérias coronárias<br>
-        <input type="radio" name="q16" value="3"> <span class="answer">Contêm barorreceptores que detectam variações na pressão arterial</span><br>
-        <input type="radio" name="q16" value="4"> Possuem válvulas internas<br>
+        <h2>16. Qual das opções abaixo descreve corretamente as fibras de Purkinje?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">São células musculares lisas que contraem as artérias.</li>
+            <li onclick="checkAnswer(this, false)">São fibras do sistema nervoso simpático que controlam a frequência cardíaca.</li>
+            <li onclick="checkAnswer(this, true)">São células especializadas no feixe atrioventricular que conduzem o estímulo elétrico.</li>
+            <li onclick="checkAnswer(this, false)">São células que compõem o tecido conjuntivo do miocárdio.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>17. Qual é a principal função da túnica adventícia?</p>
-        <input type="radio" name="q17" value="1"> Permitir trocas de substâncias<br>
-        <input type="radio" name="q17" value="2"> <span class="answer">Proteger os vasos e nutrir suas camadas externas</span><br>
-        <input type="radio" name="q17" value="3"> Controlar o fluxo sanguíneo<br>
-        <input type="radio" name="q17" value="4"> Bombear o sangue para órgãos distantes<br>
+        <h2>17. Qual característica estrutural dos capilares fenestrados facilita a troca de substâncias?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Possuem orifícios chamados fenestras, obstruídos por um diafragma.</li>
+            <li onclick="checkAnswer(this, false)">Não possuem lâmina basal.</li>
+            <li onclick="checkAnswer(this, false)">Suas células endoteliais têm junções gap.</li>
+            <li onclick="checkAnswer(this, false)">Eles não permitem trocas intensas de substâncias.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>18. Qual célula converte angiotensina I em angiotensina II?</p>
-        <input type="radio" name="q18" value="1"> Célula endotelial<br>
-        <input type="radio" name="q18" value="2"> <span class="answer">Célula muscular lisa</span><br>
-        <input type="radio" name="q18" value="3"> Célula de Purkinje<br>
-        <input type="radio" name="q18" value="4"> Célula adventícia<br>
+        <h2>18. Qual camada do coração é homóloga à túnica íntima dos vasos sanguíneos?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, true)">Endocárdio</li>
+            <li onclick="checkAnswer(this, false)">Miocárdio</li>
+            <li onclick="checkAnswer(this, false)">Pericárdio</li>
+            <li onclick="checkAnswer(this, false)">Epicárdio</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>19. Qual componente das artérias elásticas confere resistência às paredes vasculares?</p>
-        <input type="radio" name="q19" value="1"> Fibras colágenas<br>
-        <input type="radio" name="q19" value="2"> Lâminas musculares<br>
-        <input type="radio" name="q19" value="3"> Lâminas reticulares<br>
-        <input type="radio" name="q19" value="4"> <span class="answer">Lâminas de elastina</span><br>
+        <h2>19. O que permite que as artérias elásticas resistam à variação de pressão durante a sístole e a diástole?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">A espessura da túnica adventícia.</li>
+            <li onclick="checkAnswer(this, true)">A presença de lâminas de elastina na túnica média.</li>
+            <li onclick="checkAnswer(this, false)">O grande número de capilares conectados diretamente.</li>
+            <li onclick="checkAnswer(this, false)">A ausência de túnica íntima.</li>
+        </ul>
     </div>
 
     <div class="question">
-        <p>20. O que é o vasa vasorum?</p>
-        <input type="radio" name="q20" value="1"> Capilares que irrigam os músculos do coração<br>
-        <input type="radio" name="q20" value="2"> <span class="answer">Vasos que fornecem nutrientes às paredes dos grandes vasos</span><br>
-        <input type="radio" name="q20" value="3"> Veias de grande calibre<br>
-        <input type="radio" name="q20" value="4"> Artérias coronárias<br>
+        <h2>20. Qual é a principal característica das arteríolas em relação ao controle do fluxo sanguíneo?</h2>
+        <ul class="options">
+            <li onclick="checkAnswer(this, false)">A presença de válvulas unidirecionais.</li>
+            <li onclick="checkAnswer(this, false)">A túnica adventícia espessa e com vasa vasorum.</li>
+            <li onclick="checkAnswer(this, true)">A túnica média espessa e a presença de esfíncteres nas metarteríolas.</li>
+            <li onclick="checkAnswer(this, false)">A ausência de lâmina elástica interna.</li>
+        </ul>
     </div>
 
-    <input type="button" value="Enviar Respostas" onclick="checkAnswers()">
-</form>
-
-<p id="score" class="result"></p>
-
-<script>
-    function checkAnswers() {
-        let correctAnswers = ['3', '4', '2', '3', '2', '2', '2', '2', '3', '2', '4', '2', '3', '2', '3', '3', '2', '1', '4', '2']; // Respostas corretas
-        let score = 0;
-
-        for (let i = 1; i <= correctAnswers.length; i++) {
-            let radios = document.getElementsByName('q' + i);
-            for (let j = 0; j < radios.length; j++) {
-                if (radios[j].checked) {
-                    if (radios[j].value === correctAnswers[i - 1]) {
-                        radios[j].parentElement.style.color = 'green';
-                        score++;
-                    } else {
-                        radios[j].parentElement.style.color = 'red';
-                        let correct = document.querySelector('input[name="q' + i + '"][value="' + correctAnswers[i - 1] + '"]');
-                        correct.parentElement.style.color = 'green';
-                        correct.nextElementSibling.style.fontWeight = 'bold';
-                    }
-                }
+    <script>
+        function checkAnswer(element, isCorrect) {
+            if (isCorrect) {
+                element.classList.add('correct');
+                element.textContent += " (Correto)";
+            } else {
+                element.classList.add('incorrect');
+                element.textContent += " (Incorreto)";
             }
         }
-        document.getElementById('score').innerHTML = "Você acertou " + score + " de " + correctAnswers.length + " questões.";
-    }
-</script>
-
+    </script>
 </body>
 </html>
 
