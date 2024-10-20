@@ -40,213 +40,232 @@
         .incorrect {
             color: red;
         }
+        .navigation {
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>Quiz: Sistema Circulatório</h1>
 
-    <div class="question">
-        <h2>1. Qual é a principal função das células endoteliais nos vasos sanguíneos?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Efetuar trocas bidirecionais entre o sangue e o tecido circundante.</li>
-            <li onclick="checkAnswer(this, false)">Promover a coagulação sanguínea imediatamente após a passagem do sangue.</li>
-            <li onclick="checkAnswer(this, false)">Transportar oxigênio diretamente aos tecidos.</li>
-            <li onclick="checkAnswer(this, false)">Regular a temperatura corporal.</li>
-        </ul>
+    <div id="question-container">
+        <!-- Questões são carregadas aqui dinamicamente -->
     </div>
 
-    <div class="question">
-        <h2>2. Qual camada dos vasos sanguíneos é responsável por separar a túnica íntima da túnica média?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Túnica adventícia</li>
-            <li onclick="checkAnswer(this, true)">Lâmina elástica interna</li>
-            <li onclick="checkAnswer(this, false)">Camada subendotelial</li>
-            <li onclick="checkAnswer(this, false)">Túnica muscular</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>3. Onde estão localizados os corpos carotídeos e aórticos e qual sua função principal?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Na camada subendotelial, responsáveis por controlar a coagulação.</li>
-            <li onclick="checkAnswer(this, false)">No endocárdio, controlando os batimentos cardíacos.</li>
-            <li onclick="checkAnswer(this, true)">Nas artérias, contendo quimiorreceptores sensíveis ao oxigênio e dióxido de carbono.</li>
-            <li onclick="checkAnswer(this, false)">Nas veias, ajustando a pressão arterial diretamente.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>4. Qual é a característica principal dos capilares contínuos?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Possuem fenestras amplas para permitir a passagem de grandes moléculas.</li>
-            <li onclick="checkAnswer(this, true)">As células endoteliais possuem vesículas de pinocitose para transporte de substâncias.</li>
-            <li onclick="checkAnswer(this, false)">Não possuem lâmina basal.</li>
-            <li onclick="checkAnswer(this, false)">Estão presentes apenas no sistema nervoso.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>5. Qual o tipo de artéria responsável pela distribuição de sangue para os órgãos?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Artérias elásticas</li>
-            <li onclick="checkAnswer(this, true)">Artérias musculares</li>
-            <li onclick="checkAnswer(this, false)">Arteríolas</li>
-            <li onclick="checkAnswer(this, false)">Capilares</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>6. Qual a função dos vasa vasorum?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Regular a pressão arterial nos capilares.</li>
-            <li onclick="checkAnswer(this, true)">Fornecer nutrientes às células das túnicas adventícia e média em vasos calibrosos.</li>
-            <li onclick="checkAnswer(this, false)">Transportar oxigênio diretamente para o coração.</li>
-            <li onclick="checkAnswer(this, false)">Permitir a passagem de plaquetas para o sangue.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>7. Qual estrutura controla o fluxo sanguíneo nas arteríolas?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Esfíncteres das metarteríolas</li>
-            <li onclick="checkAnswer(this, false)">Lâmina elástica interna</li>
-            <li onclick="checkAnswer(this, false)">Lâminas de elastina</li>
-            <li onclick="checkAnswer(this, false)">Nó sinoatrial</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>8. Onde encontramos os capilares sinusoides?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Nos músculos esqueléticos</li>
-            <li onclick="checkAnswer(this, false)">No sistema nervoso</li>
-            <li onclick="checkAnswer(this, true)">No fígado, medula óssea e baço</li>
-            <li onclick="checkAnswer(this, false)">Nas artérias coronárias</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>9. Qual túnica é mais espessa nas veias?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Túnica íntima</li>
-            <li onclick="checkAnswer(this, false)">Túnica média</li>
-            <li onclick="checkAnswer(this, true)">Túnica adventícia</li>
-            <li onclick="checkAnswer(this, false)">Lâmina elástica externa</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>10. Qual é o componente mais espesso do miocárdio?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Endotélio</li>
-            <li onclick="checkAnswer(this, false)">Fibras de Purkinje</li>
-            <li onclick="checkAnswer(this, true)">Células musculares estriadas cardíacas</li>
-            <li onclick="checkAnswer(this, false)">Túnica adventícia</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>11. O que diferencia as artérias elásticas das artérias musculares?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">As artérias elásticas têm um calibre menor.</li>
-            <li onclick="checkAnswer(this, true)">As artérias elásticas possuem lâminas de elastina na túnica média.</li>
-            <li onclick="checkAnswer(this, false)">As artérias musculares possuem mais vasa vasorum.</li>
-            <li onclick="checkAnswer(this, false)">As artérias elásticas têm túnica adventícia mais espessa.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>12. Qual célula do sistema de condução cardíaca é encontrada no nó sinoatrial?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">Células musculares estriadas cardíacas</li>
-            <li onclick="checkAnswer(this, false)">Células de Purkinje</li>
-            <li onclick="checkAnswer(this, true)">Células cardíacas especializadas fusiformes</li>
-            <li onclick="checkAnswer(this, false)">Células do miocárdio</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>13. Qual das características a seguir é encontrada nas vênulas pós-capilares?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Junções frouxas que permitem a entrada de fluido tissular.</li>
-            <li onclick="checkAnswer(this, false)">Túnica adventícia espessa.</li>
-            <li onclick="checkAnswer(this, false)">Presença de lâmina elástica interna.</li>
-            <li onclick="checkAnswer(this, false)">Válvulas presentes na túnica íntima.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>14. Onde é encontrado o sistema porta, que permite que o sangue passe por duas redes capilares?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">No miocárdio</li>
-            <li onclick="checkAnswer(this, true)">Em algumas veias específicas, como as hepáticas</li>
-            <li onclick="checkAnswer(this, false)">Nas arteríolas do sistema coronário</li>
-            <li onclick="checkAnswer(this, false)">Nos capilares contínuos</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>15. Qual é a função do fator natriurético atrial produzido pelo coração?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Regula a pressão arterial e o equilíbrio de fluidos.</li>
-            <li onclick="checkAnswer(this, false)">Promove a coagulação sanguínea.</li>
-            <li onclick="checkAnswer(this, false)">Controla a contração dos músculos esqueléticos.</li>
-            <li onclick="checkAnswer(this, false)">Ativa o sistema de condução cardíaca.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>16. Qual das opções abaixo descreve corretamente as fibras de Purkinje?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">São células musculares lisas que contraem as artérias.</li>
-            <li onclick="checkAnswer(this, false)">São fibras do sistema nervoso simpático que controlam a frequência cardíaca.</li>
-            <li onclick="checkAnswer(this, true)">São células especializadas no feixe atrioventricular que conduzem o estímulo elétrico.</li>
-            <li onclick="checkAnswer(this, false)">São células que compõem o tecido conjuntivo do miocárdio.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>17. Qual característica estrutural dos capilares fenestrados facilita a troca de substâncias?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Possuem orifícios chamados fenestras, obstruídos por um diafragma.</li>
-            <li onclick="checkAnswer(this, false)">Não possuem lâmina basal.</li>
-            <li onclick="checkAnswer(this, false)">Suas células endoteliais têm junções gap.</li>
-            <li onclick="checkAnswer(this, false)">Eles não permitem trocas intensas de substâncias.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>18. Qual camada do coração é homóloga à túnica íntima dos vasos sanguíneos?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, true)">Endocárdio</li>
-            <li onclick="checkAnswer(this, false)">Miocárdio</li>
-            <li onclick="checkAnswer(this, false)">Pericárdio</li>
-            <li onclick="checkAnswer(this, false)">Epicárdio</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>19. O que permite que as artérias elásticas resistam à variação de pressão durante a sístole e a diástole?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">A espessura da túnica adventícia.</li>
-            <li onclick="checkAnswer(this, true)">A presença de lâminas de elastina na túnica média.</li>
-            <li onclick="checkAnswer(this, false)">O grande número de capilares conectados diretamente.</li>
-            <li onclick="checkAnswer(this, false)">A ausência de túnica íntima.</li>
-        </ul>
-    </div>
-
-    <div class="question">
-        <h2>20. Qual é a principal característica das arteríolas em relação ao controle do fluxo sanguíneo?</h2>
-        <ul class="options">
-            <li onclick="checkAnswer(this, false)">A presença de válvulas unidirecionais.</li>
-            <li onclick="checkAnswer(this, false)">A túnica adventícia espessa e com vasa vasorum.</li>
-            <li onclick="checkAnswer(this, true)">A túnica média espessa e a presença de esfíncteres nas metarteríolas.</li>
-            <li onclick="checkAnswer(this, false)">A ausência de lâmina elástica interna.</li>
-        </ul>
+    <div class="navigation">
+        <button id="prev-btn" onclick="showPrevious()" disabled>Voltar</button>
     </div>
 
     <script>
-        function checkAnswer(element, isCorrect) {
+        const questions = [
+            {
+                text: "Qual é a principal função das células endoteliais nos vasos sanguíneos?",
+                options: [
+                    { text: "Efetuar trocas bidirecionais entre o sangue e o tecido circundante.", correct: true },
+                    { text: "Promover a coagulação sanguínea imediatamente após a passagem do sangue.", correct: false },
+                    { text: "Transportar oxigênio diretamente aos tecidos.", correct: false },
+                    { text: "Regular a temperatura corporal.", correct: false }
+                ]
+            },
+            {
+                text: "Qual camada dos vasos sanguíneos é responsável por separar a túnica íntima da túnica média?",
+                options: [
+                    { text: "Túnica adventícia", correct: false },
+                    { text: "Lâmina elástica interna", correct: true },
+                    { text: "Camada subendotelial", correct: false },
+                    { text: "Túnica muscular", correct: false }
+                ]
+            },
+            {
+                text: "Onde estão localizados os corpos carotídeos e aórticos e qual sua função principal?",
+                options: [
+                    { text: "Na camada subendotelial, responsáveis por controlar a coagulação.", correct: false },
+                    { text: "No endocárdio, controlando os batimentos cardíacos.", correct: false },
+                    { text: "Nas artérias, contendo quimiorreceptores sensíveis ao oxigênio e dióxido de carbono.", correct: true },
+                    { text: "Nas veias, ajustando a pressão arterial diretamente.", correct: false }
+                ]
+            },
+            {
+                text: "Qual é a característica principal dos capilares contínuos?",
+                options: [
+                    { text: "Possuem fenestras amplas para permitir a passagem de grandes moléculas.", correct: false },
+                    { text: "As células endoteliais possuem vesículas de pinocitose para transporte de substâncias.", correct: true },
+                    { text: "Não possuem lâmina basal.", correct: false },
+                    { text: "Estão presentes apenas no sistema nervoso.", correct: false }
+                ]
+            },
+            {
+                text: "Qual o tipo de artéria responsável pela distribuição de sangue para os órgãos?",
+                options: [
+                    { text: "Artérias elásticas", correct: false },
+                    { text: "Artérias musculares", correct: true },
+                    { text: "Arteríolas", correct: false },
+                    { text: "Capilares", correct: false }
+                ]
+            },
+            {
+                text: "Qual a função dos vasa vasorum?",
+                options: [
+                    { text: "Regular a pressão arterial nos capilares.", correct: false },
+                    { text: "Fornecer nutrientes às células das túnicas adventícia e média em vasos calibrosos.", correct: true },
+                    { text: "Transportar oxigênio diretamente para o coração.", correct: false },
+                    { text: "Permitir a passagem de plaquetas para o sangue.", correct: false }
+                ]
+            },
+            {
+                text: "Qual estrutura controla o fluxo sanguíneo nas arteríolas?",
+                options: [
+                    { text: "Esfíncteres das metarteríolas", correct: true },
+                    { text: "Lâmina elástica interna", correct: false },
+                    { text: "Lâminas de elastina", correct: false },
+                    { text: "Nó sinoatrial", correct: false }
+                ]
+            },
+            {
+                text: "Onde encontramos os capilares sinusoides?",
+                options: [
+                    { text: "Nos músculos esqueléticos", correct: false },
+                    { text: "No sistema nervoso", correct: false },
+                    { text: "No fígado, medula óssea e baço", correct: true },
+                    { text: "Nas artérias coronárias", correct: false }
+                ]
+            },
+            {
+                text: "Qual túnica é mais espessa nas veias?",
+                options: [
+                    { text: "Túnica íntima", correct: false },
+                    { text: "Túnica média", correct: false },
+                    { text: "Túnica adventícia", correct: true },
+                    { text: "Lâmina elástica externa", correct: false }
+                ]
+            },
+            {
+                text: "Qual é o componente mais espesso do miocárdio?",
+                options: [
+                    { text: "Endotélio", correct: false },
+                    { text: "Fibras de Purkinje", correct: false },
+                    { text: "Células musculares estriadas cardíacas", correct: true },
+                    { text: "Túnica adventícia", correct: false }
+                ]
+            },
+            {
+                text: "O que diferencia as artérias elásticas das artérias musculares?",
+                options: [
+                    { text: "As artérias elásticas têm um calibre menor.", correct: false },
+                    { text: "As artérias elásticas possuem lâminas de elastina na túnica média.", correct: true },
+                    { text: "As artérias musculares possuem mais vasa vasorum.", correct: false },
+                    { text: "As artérias elásticas têm túnica adventícia mais espessa.", correct: false }
+                ]
+            },
+            {
+                text: "Qual célula do sistema de condução cardíaca é encontrada no nó sinoatrial?",
+                options: [
+                    { text: "Células musculares estriadas cardíacas", correct: false },
+                    { text: "Células de Purkinje", correct: false },
+                    { text: "Células cardíacas especializadas fusiformes", correct: true },
+                    { text: "Células do miocárdio", correct: false }
+                ]
+            },
+            {
+                text: "Qual das características a seguir é encontrada nas vênulas pós-capilares?",
+                options: [
+                    { text: "Junções frouxas que permitem a entrada de fluido tissular.", correct: true },
+                    { text: "Túnica adventícia espessa.", correct: false },
+                    { text: "Presença de lâmina elástica interna.", correct: false },
+                    { text: "Válvulas presentes na túnica íntima.", correct: false }
+                ]
+            },
+            {
+                text: "Onde é encontrado o sistema porta, que permite que o sangue passe por duas redes capilares?",
+                options: [
+                    { text: "No miocárdio", correct: false },
+                    { text: "Em algumas veias específicas, como as hepáticas", correct: true },
+                    { text: "Nas arteríolas do sistema coronário", correct: false },
+                    { text: "Nos capilares contínuos", correct: false }
+                ]
+            },
+            {
+                text: "Qual é a função do fator natriurético atrial produzido pelo coração?",
+                options: [
+                    { text: "Regula a pressão arterial e o equilíbrio de fluidos.", correct: true },
+                    { text: "Promove a coagulação sanguínea.", correct: false },
+                    { text: "Controla a contração dos músculos esqueléticos.", correct: false },
+                    { text: "Ativa o sistema de condução cardíaca.", correct: false }
+                ]
+            },
+            {
+                text: "Qual das opções abaixo descreve corretamente as fibras de Purkinje?",
+                options: [
+                    { text: "São células musculares lisas que contraem as artérias.", correct: false },
+                    { text: "São fibras do sistema nervoso simpático que controlam a frequência cardíaca.", correct: false },
+                    { text: "São células especializadas no feixe atrioventricular que conduzem o estímulo elétrico.", correct: true },
+                    { text: "São células que compõem o tecido conjuntivo do miocárdio.", correct: false }
+                ]
+            },
+            {
+                text: "Qual característica estrutural dos capilares fenestrados facilita a troca de substâncias?",
+                options: [
+                    { text: "Possuem orifícios chamados fenestras, obstruídos por um diafragma.", correct: true },
+                    { text: "Não possuem lâmina basal.", correct: false },
+                    { text: "Suas células endoteliais têm junções gap.", correct: false },
+                    { text: "Eles não permitem trocas intensas de substâncias.", correct: false }
+                ]
+            },
+            {
+                text: "Qual camada do coração é homóloga à túnica íntima dos vasos sanguíneos?",
+                options: [
+                    { text: "Endocárdio", correct: true },
+                    { text: "Miocárdio", correct: false },
+                    { text: "Pericárdio", correct: false },
+                    { text: "Epicárdio", correct: false }
+                ]
+            },
+            {
+                text: "O que permite que as artérias elásticas resistam à variação de pressão durante a sístole e a diástole?",
+                options: [
+                    { text: "A espessura da túnica adventícia.", correct: false },
+                    { text: "A presença de lâminas de elastina na túnica média.", correct: true },
+                    { text: "O grande número de capilares conectados diretamente.", correct: false },
+                    { text: "A ausência de túnica íntima.", correct: false }
+                ]
+            },
+            {
+                text: "Qual é a principal característica das arteríolas em relação ao controle do fluxo sanguíneo?",
+                options: [
+                    { text: "A presença de válvulas unidirecionais.", correct: false },
+                    { text: "A túnica adventícia espessa e com vasa vasorum.", correct: false },
+                    { text: "A túnica média espessa e a presença de esfíncteres nas metarteríolas.", correct: true },
+                    { text: "A ausência de lâmina elástica interna.", correct: false }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let lastAnswered = -1;
+
+        const questionContainer = document.getElementById('question-container');
+        const prevBtn = document.getElementById('prev-btn');
+
+        function loadQuestion(index) {
+            if (index >= 0 && index < questions.length) {
+                const question = questions[index];
+                questionContainer.innerHTML = `
+                    <div class="question">
+                        <h2>${question.text}</h2>
+                        <ul class="options">
+                            ${question.options.map((option, i) => `
+                                <li onclick="checkAnswer(this, ${option.correct}, ${index})">${option.text}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        function checkAnswer(element, isCorrect, index) {
             if (isCorrect) {
                 element.classList.add('correct');
                 element.textContent += " (Correto)";
@@ -254,7 +273,30 @@
                 element.classList.add('incorrect');
                 element.textContent += " (Incorreto)";
             }
+            
+            setTimeout(() => {
+                if (index < questions.length - 1) {
+                    lastAnswered = index;
+                    currentQuestionIndex++;
+                    loadQuestion(currentQuestionIndex);
+                    prevBtn.disabled = false;
+                } else {
+                    alert("Quiz completo!");
+                }
+            }, 3000);
         }
+
+        function showPrevious() {
+            if (lastAnswered >= 0) {
+                loadQuestion(lastAnswered);
+                currentQuestionIndex = lastAnswered;
+                lastAnswered--;
+                prevBtn.disabled = lastAnswered < 0;
+            }
+        }
+
+        // Carregar a primeira questão
+        loadQuestion(currentQuestionIndex);
     </script>
 </body>
 </html>
