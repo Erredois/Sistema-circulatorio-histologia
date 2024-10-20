@@ -66,6 +66,7 @@
       <button id="prev-btn" onclick="prevQuestion()">Anterior</button>
       <button id="next-btn" onclick="nextQuestion()" class="hidden">Próxima</button>
     </div>
+    <div id="score-container" class="hidden"></div>
   </div>
 
   <script>
@@ -273,10 +274,13 @@
     ];
 
     let currentQuestionIndex = 0;
+    let correctAnswersFirstTry = 0;
+    let hasAnsweredCorrectly = false;
 
     function showQuestion() {
       const questionContainer = document.getElementById('question-container');
       const currentQuestion = questions[currentQuestionIndex];
+      hasAnsweredCorrectly = false;  // Reset for the new question
       questionContainer.innerHTML = `
         <div class="question">${currentQuestion.question}</div>
         <div class="options">
@@ -292,18 +296,21 @@
       const feedbackElement = document.getElementById('feedback');
       const optionButtons = document.querySelectorAll('.options button');
 
-      // Desabilita todos os botões após o clique
-      optionButtons.forEach(button => {
-        button.disabled = true;
-      });
-
-      if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
-        feedbackElement.textContent = 'Correto!';
-        feedbackElement.classList.add('correct');
-        setTimeout(nextQuestion, 3000);
-      } else {
-        feedbackElement.textContent = 'Incorreto!';
-        feedbackElement.classList.add('incorrect');
+      if (!hasAnsweredCorrectly) {
+        if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+          feedbackElement.textContent = 'Correto!';
+          feedbackElement.classList.add('correct');
+          hasAnsweredCorrectly = true;  // Mark this question as correctly answered
+          correctAnswersFirstTry++;  // Count this as correct on the first try
+          // Desabilita todos os botões
+          optionButtons.forEach(button => {
+            button.disabled = true;
+          });
+          setTimeout(nextQuestion, 2000);
+        } else {
+          feedbackElement.textContent = 'Incorreto! Tente novamente.';
+          feedbackElement.classList.add('incorrect');
+        }
       }
     }
 
@@ -313,7 +320,7 @@
         showQuestion();
         document.getElementById('prev-btn').classList.remove('hidden');
       } else {
-        alert('Fim do quiz!');
+        showScore();
       }
     }
 
@@ -327,9 +334,18 @@
       }
     }
 
+    function showScore() {
+      const scoreContainer = document.getElementById('score-container');
+      const questionContainer = document.getElementById('question-container');
+      questionContainer.innerHTML = ''; // Hide the question container
+      scoreContainer.innerHTML = `
+        <div class="score">Você acertou ${correctAnswersFirstTry} de ${questions.length} questões de primeira!</div>
+      `;
+      scoreContainer.classList.remove('hidden');
+    }
+
     // Inicializar quiz
     showQuestion();
   </script>
 </body>
 </html>
-
